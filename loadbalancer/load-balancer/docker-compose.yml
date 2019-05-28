@@ -1,0 +1,31 @@
+version: '3'
+services:
+  haproxy:
+    container_name: haproxy
+    environment:
+      TZ: "America/New_York"
+    build:
+      context: ./haproxy-docker
+    volumes:
+      - ./haproxy-docker/haproxy:/usr/local/etc/haproxy:ro
+      - lb-volume:/var/log:rw
+      - ./haproxy-docker/src:/usr/local/etc/src:ro
+      - ./haproxy-docker/halog-scripts:/usr/local/etc/halog-scripts:rw
+    ports:
+      - "80:80"
+      - "443:443"
+
+  lbrestapi:
+    container_name: loadbalancer-api
+    environment:
+      TZ: "America/New_York"
+    build:
+      context: ./rest-api
+    volumes:
+      - lb-volume:/shared-lb-mount:rw
+    ports:
+      - "5000:5000"
+volumes:
+  lb-volume:
+    external: true
+
