@@ -1,0 +1,7 @@
+#cloud-config
+hostname: {{.Name}}
+password: passw0rd
+chpasswd: {expire: False}
+ssh_pwauth: True
+ssh_authorized_keys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUgtqilW5cCj8y3hAXCvVNahraEfLRX/ITSBElZizLDQrpjfjJSz5sMPnjtrtX9yIhYP/OW7RFVkvoT5W+ybru5/1CQYdZ6q2rhTmLk+dhwVp4dpKe3NjjtYeItagrt2DckY33FQFJzyaB2kJugPs9JXM+iQq8wanotrNF3EQ8PGUc2YvKYIRQIr04ZfoS0yZz855R/ionhcf9Ifyc5a7vBAoxUmM7QvqRM2osiE8xY1t6PQh5Hz0qvk27f9iRMm33PYnoClGq66UGMKWcVytKaLIfVE+ud3xJ3oPFxW/n7kNTSmz4cy5zPTXE4SkY5uwjP+WixlNrs7m5mqmWL/zL binwang@obelix10

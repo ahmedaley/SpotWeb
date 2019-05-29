@@ -1,0 +1,5 @@
+#cloud-config
+hostname: ubuntu
+password: passw0rd
+chpasswd: {expire: False}
+ssh_pwauth: True
