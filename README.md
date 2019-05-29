@@ -22,7 +22,7 @@ g- cvxportfolio
 h- cvxpy
 
 
-## For plotting:
+For plotting:
 
 a- seaborn
 
