@@ -1,3 +1,25 @@
+'''
+Created on May 24, 2019
+
+@author: Jonathan Westin, UMass Amherst
+'''
+
+
+#  SpotWeb
+# 
+#  Copyright (c) 2019 The SpotWeb team. All Rights Reserved.
+# 
+# This product is licensed to you under the Apache 2.0 license (the "License").
+# You may not use this product except in compliance with the Apache 2.0
+# License.
+# 
+# This product may include a number of subcomponents with separate copyright
+# notices and license terms. Your use of these subcomponents is subject to the
+# terms and conditions of the subcomponent's license, as noted in the LICENSE
+# file.
+# This file provides an interface to the information available from haproxy on the QoS of the different requests served using a REST interface.
+# The server is loaded in the haproxy docker image and creates a REST interface that can be used to get the requests data,
+
 import os
 import re
 import subprocess
@@ -8,8 +30,8 @@ from flask_restful import Resource, Api
 
 app = Flask(__name__)
 api = Api(app)
-srv_halog_filename = "/shared-lb-mount/srv_halog_output.log"
-pct_halog_filename = "/shared-lb-mount/pct_halog_output.log"
+srv_halog_filename = "/home/jwestin/www-19/scripts/t2.txt"
+pct_halog_filename = "/home/jwestin/www-19/scripts/t3.txt"
 
 
 def time_diff(last, now):
@@ -92,11 +114,11 @@ class Halog(Resource):
         global srv_halog_filename, pct_halog_filename
 
         # Get headers
-        desc = (open(srv_halog_filename).readline())
+        desc = (open(logfilename).readline())
         desc = re.sub(' +', ' ', desc).replace("#","").strip().split(' ')
 
 
-        servers = get_unique_servers(srv_halog_filename)
+        servers = get_unique_servers(logfilename)
         ret = {}
         for server in servers:
             server = server.decode().replace("\n", "")
@@ -104,7 +126,7 @@ class Halog(Resource):
             ret[server] = []
             #grep http-in/server-1 t2.txt | tail -n 2
 
-            p1 = subprocess.Popen(['grep', server, srv_halog_filename], stdout=subprocess.PIPE)
+            p1 = subprocess.Popen(['grep', server, logfilename], stdout=subprocess.PIPE)
             p2 = subprocess.Popen(['tail', '-n', str(int(noOfLines)+1)], stdin=p1.stdout, stdout=subprocess.PIPE)
             lines = p2.stdout.readlines()
             print(lines)
@@ -133,10 +155,10 @@ class Halog(Resource):
 
 class HelloWorld(Resource):
     def get(self):
-        return {'hello': 'world'}
+        return {'System': 'Initialized'}
 
 api.add_resource(HelloWorld, '/')
 api.add_resource(Halog, '/halog/<int:noOfLines>')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, port=4999)
