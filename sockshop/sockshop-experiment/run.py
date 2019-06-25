@@ -1,3 +1,24 @@
+'''
+Created on May 29, 2019
+
+@author: Bin Wang @UMass Amherst
+'''
+
+#  SpotWeb
+# 
+#  Copyright (c) 2019 The SpotWeb team, led by Ahmed Ali-Eldin and Prashant Shenoy at UMass Amherst. All Rights Reserved.
+# 
+# This product is licensed to you under the Apache 2.0 license (the "License").
+# You may not use this product except in compliance with the Apache 2.0
+# License.
+# 
+# This product may include a number of subcomponents with separate copyright
+# notices and license terms. Your use of these subcomponents is subject to the
+# terms and conditions of the subcomponent's license, as noted in the LICENSE
+# file.
+# This module provides an interface to AWS web service to start and stop instances based on the predicted workload
+#To create the AMIs, please use the Wikipedia image baseImageWithMemCacheOnly.qcow2 available here :http://zenky.cs.umu.se/PEAS/
+# 
 import itertools
 import os
 import shutil
