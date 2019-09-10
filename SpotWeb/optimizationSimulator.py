@@ -1,4 +1,6 @@
 """
+This file is used in SpotWeb as is. It is part of the CVXportfolio software.
+
 Copyright 2016 Stephen Boyd, Enzo Busseti, Steven Diamond, BlackRock Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
