@@ -38,4 +38,11 @@ b- The SpotWeb folder contains all the code used to run the core of SpotWeb, the
 
 c- The Autoscaler folder contains the code for an autoscaler that was used for the paper. In addition, we add a pointer to a few more autoscaler implementations.
 
-d- The data folder contains most of the data we collected from monitoring AWS spot markets
+d- The data folder contains most of the data we collected from monitoring AWS spot markets.
+
+e-The loadbalancer folder contains the code used for managing the load balancing in SpotWeb including the automation and the scripts required to change the loadbalancing coefficients.
+
+f- While we do not show results with sockshop (https://microservices-demo.github.io/), we include scripts that were used to test Spotweb with Sockshop. We note that sockshop had some issues with loadbalancing.
+
+## The VM images
+The German Wikipedia images are available here (http://zenky.cs.umu.se/PEAS/)
