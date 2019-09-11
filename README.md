@@ -28,3 +28,14 @@ a- seaborn
 
 b-matplotlib
 
+## Folders:
+
+There are six folders in the repo:
+
+a-  The Interface folder contains the interface code that is used to communicate between SpotWeb and AWS.
+
+b- The SpotWeb folder contains all the code used to run the core of SpotWeb, the MPO optimizer.
+
+c- The Autoscaler folder contains the code for an autoscaler that was used for the paper. In addition, we add a pointer to a few more autoscaler implementations.
+
+d- The data folder contains most of the data we collected from monitoring AWS spot markets
