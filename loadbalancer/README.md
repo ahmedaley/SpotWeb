@@ -10,7 +10,7 @@ The LB consist of three main components:
 configuration of HAProxy. 
 To build this part you need to run:
 
-`<java -jar build/libs/load-balancer-1.0-SNAPSHOT-all.jar /home/ubuntu/load-balancer/haproxy-docker/haproxy/haproxy.cfg &>`
+`java -jar build/libs/load-balancer-1.0-SNAPSHOT-all.jar /home/ubuntu/load-balancer/haproxy-docker/haproxy/haproxy.cfg &`
 
 3- The third part is the interface needed to fetch information from the HAProxy via a REST-API
 
