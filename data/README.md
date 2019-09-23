@@ -1,4 +1,4 @@
-#The Data Files
+# The Data Files
 
 1- CurrentPricePerReq.csv contains the data for the price of the different spot VM markets normalized per request monitored over a period 
 of over 2 months. To get this value, we divide the VM spot price by the total number of requests that this VM can handle.
@@ -12,4 +12,4 @@ https://dumps.wikimedia.org/other/pagecounts-ez/
 
 4- requestsCapacity.csv contains the maximum number of Wikipedia requests each VM type can serve.
 
-5-
+
