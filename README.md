@@ -5,7 +5,7 @@ Code for SpotWeb is slowly rolled over here after cleanup. All code should be on
 
 For SpotWeb to run, the following python libraries are needed:
 
-a- boto3
+a- boto3 ( for connecting with AWS)
 
 b-flask
 
