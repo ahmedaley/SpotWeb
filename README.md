@@ -40,7 +40,3 @@ d- The data folder contains most of the data we collected from monitoring AWS sp
 
 e-The loadbalancer folder contains the code used for managing the load balancing in SpotWeb including the automation and the scripts required to change the loadbalancing coefficients.
 
-
-
-## The VM images
-The German Wikipedia images are available here (http://zenky.cs.umu.se/PEAS/)
