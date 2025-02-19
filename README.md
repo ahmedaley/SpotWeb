@@ -1,5 +1,5 @@
 # SpotWeb
-Code for SpotWeb is slowly rolled over here after cleanup. All code should be online by the end of June.
+Code for SpotWeb is slowly rolled over here after cleanup. 
 
 ## Dependencies:
 
